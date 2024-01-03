@@ -1,0 +1,165 @@
+.header-anchor {
+    text-decoration: none;
+}
+
+:root {
+    --sans: "Soehne", system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
+    --circle: "Soehne Circle", sans-serif;
+    --serif: "Signifier", ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+    --mono: "Inconsolata", "Monaco", "Consolas", 'Courier New', Courier, monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    font-style: italic;
+    text-decoration-style: dashed;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em 0 1em 0;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+
+.nav {
+    font-family: var(--sans);
+    font-size: x-large;
+    font-weight: bold;
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+
+body {
+    background-color: #f7f3eb;
+    font-size: 1.3125rem;
+    margin: 0 0 100px 0;
+    width: 100%;
+    max-width: calc(12.5% + 1400px);
+    padding-left: 10.5%;
+    font-family: var(--serif);
+}
+
+article {
+    width: 55%;
+    position: relative;
+    padding: 0rem 0;
+}
+
+article>p {
+    line-height: 140%;
+}
+
+article>figure>img,
+article>img {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+article>figure>figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    font-style: italic;
+    margin-top: 0.5em;
+}
+
+@media screen and (max-width: 1079px) {
+    .hstack {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hstack-item {
+        max-width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    article {
+        width: 90%;
+    }
+    
+}
+
+article>h1 {
+    font-family: var(--sans);
+    font-size: 50px;
+    /* line-height: 150%; */
+}
+
+.footnote-ref>a{
+    font-size: 0.8em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+img {
+    max-width:100%
+}
+
+code {
+    border-radius: 3px;
+    background: #f4ece0;
+    padding: 2px;
+    color: #444444;
+    position: relative;
+    bottom: 1px;
+    font-family: var(--mono);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    font-size: 1rem !important;
+}
