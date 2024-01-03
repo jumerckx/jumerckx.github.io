@@ -46,7 +46,7 @@
     </aside>
     <hr style="border: 2px solid #c0b6a7">
     <p>The <em>Einstein summation</em> convention, <em>einsum</em> convention in short, is a notational convention for specifying operations on multidimensional arrays.<br>
-It has uses in many branches of scientific computing ranging from tensor networks used in Physics to expressing new, exotic deep learning operators.<br>
+It has uses in many branches of scientific computing ranging from tensor networks used in physics to expressing new, exotic deep learning operators.<br>
 Below, two examples are shown. Each element of the array in the left-hand side of the expression is given by the result of computing the value for all possible indices on the right-hand side and summing over all indices that don't appear in the result.<label for="sn-notation" class="margin-toggle sidenote-number"></label></span><input type="checkbox" id="sn-notation" class="margin-toggle"/><span class="sidenote">The notation used here doesn't match with e.g. Numpy or Pytorch's way of representing einsums. In these packages, these examples would be<br><code>einsum('i,i-&gt;i', [A, B])</code> and<br><code>einsum('ik,kj-&gt;ij', [α*A, α*B])</code>.<br>Though equivalent, I find the notation used in this post slightly easier to parse.</span></p>
 <pre class="language-julia"><code class="language-julia"><span class="token comment"># elementwise addition</span>
 C<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> B<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
